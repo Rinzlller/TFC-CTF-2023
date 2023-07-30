@@ -91,12 +91,12 @@ I compile scanf-printf programm on C and execute this with gdb.
     note_t* add() {
 	    ...
 	    fgets(note->content, sizeof(CONTENT_MAX), stdin);
-	    ...					 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+	    ...
 	}
 	
 	void edit(note_t* note) {
 	    printf("content> \n");
 	    fgets(note->content, CONTENT_MAX, stdin);
-	}						 ↑↑↑↑↑↑↑↑↑↑↑
+	}
 
 So we can create an 8-byte note and then write 256 bytes into it to overwrite the next note's context address, it gives us write-what-where primitive. Hello, GOT table and win function ;)
